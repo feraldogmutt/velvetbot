@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Velvet Bot ♡ Terms</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #ffeef5, #f7f0ff);
+    color: #444;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 750px;
+    margin: 60px auto;
+    padding: 35px;
+    background: rgba(255,255,255,0.75);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    text-align: center;
+    color: #d98fbf;
+}
+
+h2 {
+    margin-top: 25px;
+    color: #b57edc;
+}
+
+p {
+    line-height: 1.7;
+}
+
+a {
+    color: #b57edc;
+    text-decoration: none;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    color: #999;
+}
+
+/* floating hearts */
+.heart-float {
+    position: fixed;
+    bottom: -20px;
+    font-size: 18px;
+    color: #ff9ecb;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+    z-index: 9999;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0.8; }
+    100% { transform: translateY(-110vh); opacity: 0; }
+}
+
+/* sparkles */
+.sparkle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: #ffd6f6;
+    border-radius: 50%;
+    animation: sparkleFade 2s ease-out forwards;
+}
+
+@keyframes sparkleFade {
+    0% { opacity: 0.8; }
+    100% { opacity: 0; transform: scale(2); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Terms of Service ♡</h1>
+
+    <p>Welcome to Velvet Bot. By using this bot, you agree to keep things respectful and not break stuff.</p>
+
+    <h2>✧ Usage</h2>
+    <p>No abusing, spamming, exploiting, or trying to break the bot.</p>
+
+    <h2>✧ Moderation</h2>
+    <p>The bot may timeout, kick, or restrict users if needed.</p>
+
+    <h2>✧ Availability</h2>
+    <p>The bot may go offline, glitch, or act weird sometimes. That’s normal.</p>
+
+    <h2>✧ Liability</h2>
+    <p>We are not responsible for damages, losses, or chaos caused by usage.</p>
+
+    <h2>✧ Changes</h2>
+    <p>Terms may change anytime. Using the bot = you accept that.</p>
+
+    <p>Read our <a href="privacy.html">Privacy Policy</a>.</p>
+
+    <div class="footer">
+        soft systems, minimal chaos ♡
+    </div>
+</div>
+
+<script>
+// hearts
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart-float";
+    heart.innerHTML = "♡";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 400);
+
+// sparkles
+function createSparkle() {
+    const s = document.createElement("div");
+    s.className = "sparkle";
+    s.style.left = Math.random() * window.innerWidth + "px";
+    s.style.top = Math.random() * window.innerHeight + "px";
+    document.body.appendChild(s);
+    setTimeout(() => s.remove(), 2000);
+}
+setInterval(createSparkle, 300);
+</script>
+
+</body>
+</html>
